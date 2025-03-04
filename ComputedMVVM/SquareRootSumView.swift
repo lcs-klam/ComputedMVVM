@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct SquareRootSumView: View {
+    // MARK: Stored properties
+    @State var viewModel = SquareRootSumViewModel()
+    
+    // MARK: Computed properties
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+        VStack(spacing: 20) {
+            
+            // INPUT
+            TextField("Enter first number", text: $viewModel.providedNumber1)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.decimalPad)
+            
+            TextField("Enter second number", text: $viewModel.providedNumber2)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.decimalPad)
 
 #Preview {
     SquareRootSumView()
