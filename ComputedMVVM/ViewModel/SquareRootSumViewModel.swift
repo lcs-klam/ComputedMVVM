@@ -7,6 +7,8 @@
 
 import Foundation
 
+@Observable 
+
 class SquareRootSumViewModel {
     
     // MARK: Stored properties
