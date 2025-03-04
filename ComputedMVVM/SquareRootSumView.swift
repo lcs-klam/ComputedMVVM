@@ -26,10 +26,19 @@ struct SquareRootSumView: View {
             
             // OUTPUT
             if let result = viewModel.squareRootSum?.result {
-                Text("Square root of sum: \(result, specifier: "%.2f")")
-                    .font(.title2)
+                Text("Square root of sum: \(result.formatted(.number.precision(.significantDigits(2))))")
+                    .font(.system(size: 24))
                     .foregroundColor(.blue)
             }
+            
+                       Text(viewModel.recoverySuggestion)
+                           .foregroundColor(.red)
+                           .font(.caption)
+                       
+                   }
+                   .padding()
+               }
+           }
             
             
             #Preview {
