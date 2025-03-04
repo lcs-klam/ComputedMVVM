@@ -23,7 +23,15 @@ struct SquareRootSumView: View {
             TextField("Enter second number", text: $viewModel.providedNumber2)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.decimalPad)
-
-#Preview {
-    SquareRootSumView()
-}
+            
+            // OUTPUT
+            if let result = viewModel.squareRootSum?.result {
+                Text("Square root of sum: \(result, specifier: "%.2f")")
+                    .font(.title2)
+                    .foregroundColor(.blue)
+            }
+            
+            
+            #Preview {
+                SquareRootSumView()
+            }
