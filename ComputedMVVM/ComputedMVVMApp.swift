@@ -11,7 +11,7 @@ import SwiftUI
 struct ComputedMVVMApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SquareRootSumView()
         }
     }
 }
