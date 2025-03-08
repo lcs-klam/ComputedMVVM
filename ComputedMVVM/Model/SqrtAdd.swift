@@ -8,7 +8,9 @@
 import Foundation
 
 // MODEL
-struct SquareRootSum {
+struct SquareRootSum: Identifiable {
+    
+    let id = UUID()
     
     // MARK: Stored properties
     var number1: Double

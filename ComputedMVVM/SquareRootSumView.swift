@@ -46,6 +46,19 @@ struct SquareRootSumView: View {
                     .foregroundColor(.red)
                     .font(.caption)
             }
+            HStack {
+                Text("History")
+                    .bold()
+                Spacer()
+            }
+            .padding(.vertical)
+
+            // Iterate over the history of results
+            List(viewModel.resultHistory) { priorResult in
+                SquareRootSumItemView(squareRootSum: priorResult)
+            }
+            .listStyle(.plain)
+
         }
         .padding()
     }
