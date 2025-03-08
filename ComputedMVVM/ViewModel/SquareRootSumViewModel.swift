@@ -12,6 +12,7 @@ import Foundation
 class SquareRootSumViewModel {
     
     // MARK: Stored properties
+    var resultHistory: [SquareRootSum] = []
     var providedNumber1: String
     var providedNumber2: String
     var recoverySuggestion: String = ""
@@ -45,5 +46,11 @@ class SquareRootSumViewModel {
         self.providedNumber1 = providedNumber1
         self.providedNumber2 = providedNumber2
         self.recoverySuggestion = recoverySuggestion
+    }
+    func saveResult() {
+      
+        if let squareRootSum = self.squareRootSum {
+         self.resultHistory.insert(squareRootSum, at: 0)
+        }
     }
 }
