@@ -29,6 +29,17 @@ struct SquareRootSumView: View {
                 Text("Square root of sum: \(result.formatted(.number.precision(.significantDigits(2))))")
                     .font(.system(size: 24))
                     .foregroundColor(.blue)
+                
+                // Add a button so that the result can be saved
+                Button {
+                    viewModel.saveResult()
+                    // DEBUG: Show how many items are in the resultHistory array
+                    print("There are \(viewModel.resultHistory.count) elements in the resultHistory array.")
+                } label: {
+                    Text("Save")
+                }
+                .buttonStyle(.borderedProminent)
+                .padding(.bottom)
             } else {
                 // Show recovery suggestion if there's an error
                 Text(viewModel.recoverySuggestion)
