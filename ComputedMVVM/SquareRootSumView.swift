@@ -29,18 +29,17 @@ struct SquareRootSumView: View {
                 Text("Square root of sum: \(result.formatted(.number.precision(.significantDigits(2))))")
                     .font(.system(size: 24))
                     .foregroundColor(.blue)
+            } else {
+                // Show recovery suggestion if there's an error
+                Text(viewModel.recoverySuggestion)
+                    .foregroundColor(.red)
+                    .font(.caption)
             }
-            
-                       Text(viewModel.recoverySuggestion)
-                           .foregroundColor(.red)
-                           .font(.caption)
-                       
-                   }
-                   .padding()
-               }
-           }
-            
-            
-            #Preview {
-                SquareRootSumView()
-            }
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    SquareRootSumView()
+}
